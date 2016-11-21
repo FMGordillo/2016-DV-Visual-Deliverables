@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using TP7_FMGordillo.Models;
 
 namespace TP7_FMGordillo.Controllers
@@ -46,10 +47,14 @@ namespace TP7_FMGordillo.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,codigo,descripcion,precio")] Articulo articulo)
+        public ActionResult Create([Bind(Include = "codigo,descripcion,precio")] Articulo articulo)
         {
             if (ModelState.IsValid)
             {
+                /*if ()
+                {
+
+                }*/
                 db.Articulo.Add(articulo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,13 +64,13 @@ namespace TP7_FMGordillo.Controllers
         }
 
         // GET: Articulo/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? Codigo)
         {
-            if (id == null)
+            if (Codigo == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Articulo articulo = db.Articulo.Find(id);
+            Articulo articulo = db.Articulo.Find(Codigo);
             if (articulo == null)
             {
                 return HttpNotFound();
@@ -78,7 +83,7 @@ namespace TP7_FMGordillo.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,codigo,descripcion,precio")] Articulo articulo)
+        public ActionResult Edit([Bind(Include = "codigo,descripcion,precio")] Articulo articulo)
         {
             if (ModelState.IsValid)
             {
@@ -90,13 +95,13 @@ namespace TP7_FMGordillo.Controllers
         }
 
         // GET: Articulo/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? Codigo)
         {
-            if (id == null)
+            if (Codigo == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Articulo articulo = db.Articulo.Find(id);
+            Articulo articulo = db.Articulo.Find(Codigo);
             if (articulo == null)
             {
                 return HttpNotFound();
@@ -107,12 +112,22 @@ namespace TP7_FMGordillo.Controllers
         // POST: Articulo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int Codigo)
         {
-            Articulo articulo = db.Articulo.Find(id);
+            Articulo articulo = db.Articulo.Find(Codigo);
             db.Articulo.Remove(articulo);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public JsonResult CodigoExiste(string term)
+        {
+            if( term != null)
+            {
+                var codigo = Membership.GetUser(term);
+                return Json(codigo == null, JsonRequestBehavior.AllowGet);
+            }
+            return Json("", JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

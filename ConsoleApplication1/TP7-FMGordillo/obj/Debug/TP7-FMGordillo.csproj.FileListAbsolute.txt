@@ -105,6 +105,11 @@ C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGor
 C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\obj\Debug\TP7-FMGordillo.csprojResolveAssemblyReference.cache
 C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\obj\Debug\TP7-FMGordillo.dll
 C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\obj\Debug\TP7-FMGordillo.pdb
+C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\bin\Microsoft.Azure.AppService.ApiApps.Service.dll
+C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\bin\Swashbuckle.Core.dll
+C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\bin\WebActivatorEx.dll
+C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\TP7-FMGordillo\obj\Debug\TP7-FMGordillo.csprojResolveAssemblyReference.cache

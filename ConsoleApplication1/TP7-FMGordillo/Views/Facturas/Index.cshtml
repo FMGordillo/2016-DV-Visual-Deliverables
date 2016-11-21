@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TP7_FMGordillo.Models.Factura>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva factura", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaId)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.FacturaId }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.FacturaId }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.FacturaId })
+        </td>
+    </tr>
+}
+
+</table>
