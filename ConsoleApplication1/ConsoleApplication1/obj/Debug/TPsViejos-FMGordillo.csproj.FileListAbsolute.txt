@@ -1,3 +1,0 @@
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

@@ -1,9 +1,0 @@
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\Forms-FMGordillo\bin\Debug\Forms-FMGordillo.exe.config
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\Forms-FMGordillo\bin\Debug\Forms-FMGordillo.exe
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\Forms-FMGordillo\bin\Debug\Forms-FMGordillo.pdb
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\Forms-FMGordillo\obj\Debug\Forms-AlumnoMateria-FMGordillo.csprojResolveAssemblyReference.cache
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\Forms-FMGordillo\obj\Debug\Forms_FMGordillo.Form1.resources
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\Forms-FMGordillo\obj\Debug\Forms_FMGordillo.Properties.Resources.resources
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\Forms-FMGordillo\obj\Debug\Forms-AlumnoMateria-FMGordillo.csproj.GenerateResource.Cache
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\Forms-FMGordillo\obj\Debug\Forms-FMGordillo.exe
-C:\Users\facu9\Source\Repos\DV_VisualBasicLearning\ConsoleApplication1\Forms-FMGordillo\obj\Debug\Forms-FMGordillo.pdb
