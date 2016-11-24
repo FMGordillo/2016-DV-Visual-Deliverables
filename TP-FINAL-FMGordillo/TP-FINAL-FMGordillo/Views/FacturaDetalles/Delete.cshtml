@@ -1,0 +1,65 @@
+﻿@model TP_FINAL_FMGordillo.Models.FacturaDetalle
+
+@{
+    ViewBag.Title = "Eliminar detalle de factura";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>¿Esta seguro que desea eliminar este detalle?</h3>
+<div>
+    <h4>Detalle de factura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Factura.idfactura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Factura.idfactura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Articulo.detalle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Articulo.detalle)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar detalle de factura" class="btn btn-default" /> |
+            @Html.ActionLink("<-- Volver a la lista", "Index")
+        </div>
+    }
+</div>

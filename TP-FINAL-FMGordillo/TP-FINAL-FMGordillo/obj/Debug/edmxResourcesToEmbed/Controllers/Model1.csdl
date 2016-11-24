@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TPFINAL_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="idarticulo" />
+    </Key>
+    <Property Name="idarticulo" Type="Int32" Nullable="false" />
+    <Property Name="detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="precio" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="FacturaDetalles" Relationship="Self.FK_Table_1_Articulo" FromRole="Articulo" ToRole="FacturaDetalle" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="idfactura" />
+    </Key>
+    <Property Name="idfactura" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="FacturaDetalles" Relationship="Self.FK_Table_1_Factura" FromRole="Factura" ToRole="FacturaDetalle" />
+  </EntityType>
+  <EntityType Name="FacturaDetalle">
+    <Key>
+      <PropertyRef Name="iddetalle" />
+      <PropertyRef Name="idfactura" />
+    </Key>
+    <Property Name="iddetalle" Type="Int32" Nullable="false" />
+    <Property Name="idfactura" Type="Int32" Nullable="false" />
+    <Property Name="idarticulo" Type="Int32" Nullable="false" />
+    <Property Name="precio" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Articulo" Relationship="Self.FK_Table_1_Articulo" FromRole="FacturaDetalle" ToRole="Articulo" />
+    <NavigationProperty Name="Factura" Relationship="Self.FK_Table_1_Factura" FromRole="FacturaDetalle" ToRole="Factura" />
+  </EntityType>
+  <Association Name="FK_Table_1_Articulo">
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="1" />
+    <End Role="FacturaDetalle" Type="Self.FacturaDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulo">
+        <PropertyRef Name="idarticulo" />
+      </Principal>
+      <Dependent Role="FacturaDetalle">
+        <PropertyRef Name="idarticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_1_Factura">
+    <End Role="Factura" Type="Self.Factura" Multiplicity="1" />
+    <End Role="FacturaDetalle" Type="Self.FacturaDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Factura">
+        <PropertyRef Name="idfactura" />
+      </Principal>
+      <Dependent Role="FacturaDetalle">
+        <PropertyRef Name="idfactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TPFINAL_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Articuloes" EntityType="Self.Articulo" />
+    <EntitySet Name="Facturas" EntityType="Self.Factura" />
+    <EntitySet Name="FacturaDetalles" EntityType="Self.FacturaDetalle" />
+    <AssociationSet Name="FK_Table_1_Articulo" Association="Self.FK_Table_1_Articulo">
+      <End Role="Articulo" EntitySet="Articuloes" />
+      <End Role="FacturaDetalle" EntitySet="FacturaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_1_Factura" Association="Self.FK_Table_1_Factura">
+      <End Role="Factura" EntitySet="Facturas" />
+      <End Role="FacturaDetalle" EntitySet="FacturaDetalles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

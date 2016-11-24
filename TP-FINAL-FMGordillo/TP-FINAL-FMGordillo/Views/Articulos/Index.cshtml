@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TP_FINAL_FMGordillo.Models.Articulo>
+
+@{
+    ViewBag.Title = "Articulo";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo articulo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.detalle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.detalle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idarticulo }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idarticulo }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idarticulo })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<TP_FINAL_FMGordillo.Models.FacturaDetalle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo detalle de factura", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iddetalle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Articulo.detalle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Factura.idfactura)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iddetalle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Articulo.detalle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Factura.idfactura)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { iddetalle = item.iddetalle, idfactura = item.idfactura }) |
+            @Html.ActionLink("Detalles", "Details", new {  iddetalle = item.iddetalle, idfactura = item.idfactura  }) |
+            @Html.ActionLink("Eliminar", "Delete", new { iddetalle = item.iddetalle, idfactura = item.idfactura })
+        </td>
+    </tr>
+}
+
+</table>
+
+<script type="text/javascript">
+    {
+    $(document).click(function() {
+    alert("me");
+});
+    $(".CreateRow").click(function (e) {
+    e.stopPropagation(); // This is the preferred method.
+    return false;        // This should not be used unless you do not want
+                         // any click events registering inside the div
+});
+    }
+</script>
